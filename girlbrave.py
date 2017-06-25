@@ -13,7 +13,7 @@ def run_game ():
     pygame.display.set_caption ("Girl Brave")
 
     #Make a girl
-    girl = Girl (screen)
+    girl = Girl (gb_settings, screen)
 
     #Set the background color.
     bg_color = (230, 230, 230)
