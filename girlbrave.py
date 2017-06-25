@@ -5,7 +5,9 @@ from settings import Settings
 def run_game ():
     #Initialize game and create a screen object
     pygame.init()
-    screen = pygame.display.set_mode ((1200, 800))
+    gb_settings = Settings()
+    screen = pygame.display.set_mode (
+        (gb_settings.screen_width, gb_settings.screen_height))
     pygame.display.set_caption ("Girl Brave")
 
     #Set the background color.
@@ -19,7 +21,7 @@ def run_game ():
             if event.type == pygame.QUIT:
                 sys.exit()
         #Redraw the screen during each pass through the loop.
-        screen.fill (bg_color)
+        screen.fill (gb_settings.bg_color)
 
         #Make the most recently drawn screen visible.
         pygame.display.flip()
