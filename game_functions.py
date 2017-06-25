@@ -9,8 +9,15 @@ def check_events(girl):
             sys.exit()
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RIGHT:
-                #Move the girl to the right.
-                girl.rect.centerx += 1
+                girl.moving_right = True
+            elif event.key == pygame.K_LEFT:
+                girl.moving_left = True
+
+        elif event.type == pygame.KEYUP:
+            if event.key == pygame.K_RIGHT:
+                girl.moving_right = False
+            elif event.key == pygame.K_LEFT:
+                girl.moving_left = False
 
 def update_screen (gb_settings, screen, girl):
     """Update images on the screen and flip to the new screen."""
